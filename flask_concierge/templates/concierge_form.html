@@ -1,32 +1,57 @@
-# Create the concierge_app.py content
-concierge_app_content = """
-# ARKTIK Concierge Flask App 🌟
-# Elegant service requests – Submit your luxury needs seamlessly.
+# Create the concierge_form.html content
+concierge_form_html_content = """
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARKTIK Concierge Request</title>
+    <style>
+        body {
+            background-color: #696969;
+            color: #D4AF37; /* ARKTIK gold accent */
+            font-family: 'Cinzel', serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        select, textarea, button {
+            margin: 10px;
+            padding: 10px;
+            font-size: 18px;
+        }
+        button {
+            background-color: #595959;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #9007A2; /* ARKTIK accent color */
+        }
+    </style>
+</head>
+<body>
+    <h1>Submit a Concierge Service Request 🎩</h1>
+    <form method="POST">
+        <label for="service_type">Select a Service:</label>
+        <select name="service_type" id="service_type">
+            <option value="Executive Jet Care">Executive Jet Care ✈️</option>
+            <option value="Yacht Detailing">Yacht Detailing 🚤</option>
+            <option value="Limo Service">Limo Service 🚖</option>
+        </select><br>
 
-from flask import Flask, render_template, request
+        <textarea name="details" rows="5" cols="40" placeholder="Additional details..."></textarea><br>
 
-app = Flask(__name__)
-
-@app.route("/", methods=["GET", "POST"])
-def concierge():
-    if request.method == "POST":
-        service_type = request.form["service_type"]
-        details = request.form["details"]
-
-        # Notify the team with a touch of class.
-        print(f"🎩 New Request Received: {service_type} | Details: {details}")
-        return "Your request is now in motion. Prepare for excellence. 🚀"
-
-    return render_template("concierge_form.html")
-
-if __name__ == "__main__":
-    print("🔮 ARKTIK Concierge is now live – Awaiting your service requests...")
-    app.run(debug=True)
+        <button type="submit">Submit Request</button>
+    </form>
+</body>
+</html>
 """
 
-# Save the content into a .py file
-concierge_app_path = "/mnt/data/concierge_app.py"
-with open(concierge_app_path, "w") as file:
-    file.write(concierge_app_content)
+# Save the content into a concierge_form.html file
+concierge_form_html_path = "/mnt/data/concierge_form.html"
+with open(concierge_form_html_path, "w") as file:
+    file.write(concierge_form_html_content)
 
-concierge_app_path
+concierge_form_html_path
