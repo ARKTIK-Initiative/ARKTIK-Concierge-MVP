@@ -1,0 +1,58 @@
+# Create the booking_form.html content
+booking_form_html_content = """
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARKTIK Appointment Booking</title>
+    <style>
+        body {
+            background-color: #696969;
+            color: #D4AF37; /* ARKTIK gold accent */
+            font-family: 'Cinzel', serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input, button {
+            margin: 10px;
+            padding: 10px;
+            font-size: 18px;
+        }
+        button {
+            background-color: #595959;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #9007A2; /* ARKTIK accent color */
+        }
+    </style>
+</head>
+<body>
+    <h1>Book Your ARKTIK Appointment 🗓️</h1>
+    <form id="booking-form">
+        <label for="date">Select a Date:</label>
+        <input type="date" id="date" required><br>
+
+        <label for="time">Select a Time:</label>
+        <input type="time" id="time" required><br>
+
+        <button type="submit">Confirm Appointment</button>
+    </form>
+
+    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-database.js"></script>
+    <script src="booking.js"></script>
+</body>
+</html>
+"""
+
+# Save the content into a booking_form.html file
+booking_form_html_path = "/mnt/data/booking_form.html"
+with open(booking_form_html_path, "w") as file:
+    file.write(booking_form_html_content)
+
+booking_form_html_path
