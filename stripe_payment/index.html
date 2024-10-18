@@ -1,0 +1,47 @@
+# Create the index.html content
+index_html_content = """
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARKTIK Concierge Payment</title>
+    <style>
+        body {
+            background-color: #696969;
+            color: #D4AF37; /* Gold for luxury vibe */
+            font-family: 'Cinzel', serif;
+            text-align: center;
+            margin-top: 100px;
+        }
+        button {
+            background-color: #595959;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #9007A2; /* ARKTIK accent color */
+        }
+    </style>
+</head>
+<body>
+    <h1>ARKTIK Concierge Payment Portal 💎</h1>
+    <p>Seamlessly pay for your premium service experience.</p>
+    <button id="pay-btn">Make Payment</button>
+
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="stripe_payment.js"></script>
+</body>
+</html>
+"""
+
+# Save the content into an index.html file
+index_html_path = "/mnt/data/index.html"
+with open(index_html_path, "w") as file:
+    file.write(index_html_content)
+
+index_html_path
